@@ -1,0 +1,30 @@
+﻿<Window x:Class="xwsb0._11.LoadXsmdWinAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="从原始名单中增加学生" Height="250" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="127*"></ColumnDefinition>
+                <ColumnDefinition Width="151*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35*"></RowDefinition>
+                <RowDefinition Height="30*"></RowDefinition>
+                <RowDefinition Height="36*"></RowDefinition>
+                <RowDefinition Height="35*"></RowDefinition>
+                <RowDefinition Height="40*"></RowDefinition>
+                <RowDefinition Height="35*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.ColumnSpan="2" Margin="5" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" FontSize="18">增加学生</TextBlock>
+            <CheckBox Margin="12,11,52,35" Grid.Row="1" Content="打印时间" IsChecked="True" Name="ck_printtime" HorizontalAlignment="Center" Grid.RowSpan="2" />
+            <TextBlock Margin="28,5,38,5" Grid.Row="2"  Padding="5" HorizontalAlignment="Center" >起始时间:</TextBlock>
+            <DatePicker  Margin="114,5,10,5" Grid.Row="2"  Name="dp_starttime" SelectedDateFormat="Long" Grid.ColumnSpan="2" />
+            <TextBlock Margin="28,5,38,5" Grid.Row="3"  Padding="5" HorizontalAlignment="Center">截止时间:</TextBlock>
+            <DatePicker Margin="114,5,10,5" Grid.Row="3" Name="dp_endtime" SelectedDateFormat="Long" Grid.ColumnSpan="2" />
+            <CheckBox Margin="12,11,150,2" Grid.Row="4" Content="学号开头(如:2010)"  Name="ck_xh" Grid.ColumnSpan="2" />
+            <TextBox Height="25" Margin="5,5,10,5" Grid.Column="1" Grid.Row="4" Name="tb_xhstart"  />
+            <Button Margin="87,5,111,5" Grid.ColumnSpan="2" Grid.Row="5" Content="确定"  Name="bt_addxsmdfilter" Width="80" Click="bt_addxsmdfilter_Click" />
+        </Grid>
+    </Grid>
+</Window>

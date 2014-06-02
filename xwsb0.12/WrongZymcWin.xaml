@@ -1,0 +1,70 @@
+﻿<Window x:Class="xwsb0._11.WrongZymcWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="学生自设专业名称错误" Height="570" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closed="Window_Closed">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="300"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="5,3">自设专业名称不在专业代码表中的学生：</TextBlock>
+                <DataGrid Margin="5" Height="110" Name="dg_zymcFail" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="专业代码" Binding="{Binding zydm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="专业名称" Binding="{Binding zymc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="自设专业名称" Binding="{Binding zszymc}" Width="*"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="5,4">请在下面的代码表中，选择专业代码:</TextBlock>
+            <TabControl Grid.Column="0" Grid.Row="2" Name="tc_zymc">
+                <TabItem Header="专业代码表" Name="ti_zydm" Initialized="ti_zydm_Initialized">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="260"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0" Grid.Row="0" Margin="5" Name="dg_dmZymc" ItemsSource="{Binding}" CanUserAddRows="False" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="专业代码" Binding="{Binding zydm}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="专业名称" Binding="{Binding zymc}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="自设专业名称" Binding="{Binding zszymc}" Width="*"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="原始专业代码表" Name="ti_zydmInit" Initialized="ti_zydmInit_Initialized">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0" Grid.Row="0" Margin="5" Name="dg_dmZymcInit" ItemsSource="{Binding}" CanUserAddRows="False" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="专业代码" Binding="{Binding zydm}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="专业名称" Binding="{Binding zymc}" Width="*"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button  Margin="10" Width="130" Name="bt_setZymcDm" Click="bt_setZymcDm_Click">确定该自设专业代码</Button>
+                <Button Margin="10" Width="130" Name="bt_zymcConfim" Click="bt_zymcConfim_Click">完成</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

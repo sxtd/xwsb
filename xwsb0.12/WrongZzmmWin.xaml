@@ -1,0 +1,47 @@
+﻿<Window x:Class="xwsb0._11.WrongZzmmWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="学生政治面貌错误" Height="480" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closed="Window_Closed">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="5,3">政治面貌不在代码表中的学生：</TextBlock>
+                <DataGrid Margin="5" Height="110" Name="dg_zzmmFail" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="政治面貌" Binding="{Binding oldZzmm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="修改后的政治面貌" Width="*" Binding="{Binding newZzmm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="5,4">请在下面的政治面貌列表中选择正确的政治面貌:</TextBlock>
+                    <Grid Grid.Column="0" Grid.Row="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0" Grid.Row="0" Margin="5" Name="dg_dmZzmm" ItemsSource="{Binding}" CanUserAddRows="False" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="政治面貌代码" Binding="{Binding zzmmm}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="政治面貌" Binding="{Binding zzmm}" Width="*"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+            <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button  Margin="10" Height="30" Width="100" Name="bt_setNewZzmmDm" Click="bt_setNewZzmm_Click">确定政治面貌</Button>
+                <Button Margin="10" Height="30" Width="100" Name="bt_zzmmConfim" Click="bt_ZzmmConfim_Click">完成</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

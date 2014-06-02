@@ -1,0 +1,25 @@
+﻿<Window x:Class="xwsb0._11.DmXbWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="性别代码管理" Height="220" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="170"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0" Grid.Row="0" Margin="5" Name="dg_dmXb" ItemsSource="{Binding}" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="性别" Binding="{Binding xb}"></DataGridTextColumn>
+                <DataGridTextColumn Header="性别码" Binding="{Binding xbm}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Visibility="Hidden" Grid.Column="0" Grid.Row="1" Margin="5"  Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="5" Width="80" Height="30" Name="bt_xbdmModify" Click="bt_xbdmModify_Click">修改</Button>
+            <Button Margin="5" Width="80" Height="30" Name="bt_xbdmSave">保存</Button>
+            <Button Margin="5" Width="80" Height="30" Name="bt_xbdmClose" Click="bt_xbdmClose_Click">关闭</Button>
+        </StackPanel>
+    </Grid>
+</Window>

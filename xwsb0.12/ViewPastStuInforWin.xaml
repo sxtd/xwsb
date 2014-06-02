@@ -1,0 +1,63 @@
+﻿<Window x:Class="xwsb0._11.ViewPastStuInforWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="历次学位上报信息" Height="450" Width="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="329*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">历次学位上报信息</TextBlock>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,0,6,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Height="24" Width="134">请选择要查看的数据表:</TextBlock>
+                <ComboBox Height="30" Width="218" Name="cb_pastXwzzTableName" ></ComboBox>
+                <Button Height="30" VerticalAlignment="Top" Name="bt_TableNameConfirm" Click="bt_TableNameConfirm_Click" Margin="20,5" Width="90">确定</Button>
+                <Button Height="30" Name="bt_refreshZydm" Click="bt_refreshZydm_Click" Width="111">刷新专业代码表</Button>
+            </StackPanel>
+            <DataGrid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Name="dg_pastXwsb" ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="姓名" Binding="{Binding xm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="姓名拼音" Binding="{Binding xmpy}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="性别码" Binding="{Binding xbm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="性别" Binding="{Binding xb}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="民族码" Binding="{Binding mzm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="民族" Binding="{Binding mz}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="政治面貌码" Binding="{Binding zzmmm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="政治面貌" Binding="{Binding zzmm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="出生日期" Binding="{Binding csrq}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="证件类型码" Binding="{Binding zjlxm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="证件类型" Binding="{Binding zjlx}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="证件号码" Binding="{Binding zjhm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="学位授予单位码" Binding="{Binding xwsydwm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="学位授予单位" Binding="{Binding xwsydw}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="校长姓名" Binding="{Binding xzxm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="主席姓名" Binding="{Binding zxxm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="培养单位码" Binding="{Binding pydwm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="培养单位" Binding="{Binding pydw}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="学位类别码" Binding="{Binding xwlbm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="学位类别" Binding="{Binding xwlb}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="专业代码" Binding="{Binding zydm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="专业名称" Binding="{Binding zymc}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="自设专业代码" Binding="{Binding zszymc}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="考生号" Binding="{Binding ksh}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="入学年月" Binding="{Binding rxny}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="学号" Binding="{Binding xh}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="学制" Binding="{Binding xz}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="毕业年月" Binding="{Binding byny}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="获学位日期" Binding="{Binding hxwrq}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="是否第二学位" Binding="{Binding sfdexw}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="是否辅修学位" Binding="{Binding sffxxw}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="学位证书编号" Binding="{Binding xwzsbh}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="照片" Binding="{Binding zp}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="备注" Binding="{Binding bz}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>
